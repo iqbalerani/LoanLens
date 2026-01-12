@@ -26,6 +26,25 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect, selectedFileName 
     reader.readAsDataURL(file);
   };
 
+  const handleBrowseClick = () => {
+    console.log('Browse button clicked');
+    console.log('fileInputRef.current:', fileInputRef.current);
+
+    if (!fileInputRef.current) {
+      console.error('File input ref is not attached!');
+      alert('Error: File input not available. Please refresh the page.');
+      return;
+    }
+
+    try {
+      fileInputRef.current.click();
+      console.log('File input click triggered');
+    } catch (error) {
+      console.error('Error triggering file input:', error);
+      alert('Error opening file picker. Please try again.');
+    }
+  };
+
   return (
     <div 
       className={`relative border-2 border-dashed rounded-[2.5rem] p-10 transition-all duration-500 text-center flex flex-col items-center justify-center h-full min-h-[400px] ${
@@ -57,8 +76,8 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect, selectedFileName 
           </div>
           <p className="text-white font-extrabold text-xl mb-2 max-w-[280px] truncate">{selectedFileName}</p>
           <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-10">Document Loaded</p>
-          <button 
-            onClick={() => fileInputRef.current?.click()}
+          <button
+            onClick={handleBrowseClick}
             className="bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all border border-white/10"
           >
             Replace Asset
@@ -73,8 +92,8 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect, selectedFileName 
           <p className="text-white/40 text-sm font-medium mb-12 max-w-[300px] mx-auto leading-relaxed">
             Upload pay stubs, bank ledgers or tax filings for AI-driven verification.
           </p>
-          <button 
-            onClick={() => fileInputRef.current?.click()}
+          <button
+            onClick={handleBrowseClick}
             className="bg-indigo-600 text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-indigo-500 transition-all shadow-2xl shadow-indigo-600/20 active:scale-95 border border-white/10"
           >
             Browse Assets
