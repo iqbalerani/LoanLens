@@ -1,0 +1,7 @@
+{
+  "name": "LoanLens",
+  "description": "An AI-powered micro-loan assessment tool that analyzes income documents to provide instant lending recommendations and affordability reports.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
