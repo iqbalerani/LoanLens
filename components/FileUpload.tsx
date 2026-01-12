@@ -27,18 +27,13 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect, selectedFileName 
   };
 
   const handleBrowseClick = () => {
-    console.log('Browse button clicked');
-    console.log('fileInputRef.current:', fileInputRef.current);
-
     if (!fileInputRef.current) {
-      console.error('File input ref is not attached!');
       alert('Error: File input not available. Please refresh the page.');
       return;
     }
 
     try {
       fileInputRef.current.click();
-      console.log('File input click triggered');
     } catch (error) {
       console.error('Error triggering file input:', error);
       alert('Error opening file picker. Please try again.');

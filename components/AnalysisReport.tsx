@@ -49,7 +49,7 @@ const AnalysisReport: React.FC<AnalysisReportProps> = ({ report }) => {
             </div>
             <div className="flex flex-col">
               <div className="text-[12px] font-black uppercase tracking-[0.5em] text-white/30 mb-4">Underwriter Decision</div>
-              <div className={`text-9xl font-black tracking-tighter leading-none ${getStatusColor()}`}>
+              <div className={`text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none ${getStatusColor()}`}>
                 {report.recommendation}
               </div>
             </div>
@@ -57,10 +57,10 @@ const AnalysisReport: React.FC<AnalysisReportProps> = ({ report }) => {
           
           <div className="hidden lg:block w-px h-40 bg-white/5"></div>
 
-          <div className="flex items-center gap-16 lg:pl-10">
+          <div className="flex items-center gap-8 lg:pl-8">
             <div className="flex flex-col items-center">
               <div className="text-[12px] font-black uppercase tracking-[0.5em] text-white/30 mb-10">Verification Health</div>
-              <div className="flex items-center gap-12">
+              <div className="flex items-center gap-8">
                 <div className="relative w-36 h-36 flex items-center justify-center">
                   <svg className="w-full h-full transform -rotate-90 drop-shadow-2xl">
                     <circle cx="72" cy="72" r={normalizedRadius} stroke="rgba(255,255,255,0.05)" strokeWidth={strokeWidth} fill="transparent" />
@@ -122,7 +122,7 @@ const AnalysisReport: React.FC<AnalysisReportProps> = ({ report }) => {
 
       {/* Underwriting Grid */}
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
-        <div className="xl:col-span-8 glass-card rounded-[3.5rem] p-12 space-y-12 border border-white/5">
+        <div className="xl:col-span-12 glass-card rounded-[3.5rem] p-12 space-y-12 border border-white/5">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/40 flex items-center gap-6">
               <i className="fa-solid fa-fingerprint text-blue-500 text-2xl"></i> Underwriting Evidence
@@ -185,7 +185,8 @@ const AnalysisReport: React.FC<AnalysisReportProps> = ({ report }) => {
           </div>
         </div>
 
-        <div className="xl:col-span-4 glass-card rounded-[3.5rem] p-12 flex flex-col border border-white/5 shadow-2xl">
+        {/* Structure Architect - Commented out as per user request */}
+        {/* <div className="xl:col-span-4 glass-card rounded-[3.5rem] p-12 flex flex-col border border-white/5 shadow-2xl">
           <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/40 mb-14 flex items-center gap-6">
             <i className="fa-solid fa-diagram-project text-blue-500 text-2xl"></i> Structure Architect
           </h3>
@@ -205,11 +206,11 @@ const AnalysisReport: React.FC<AnalysisReportProps> = ({ report }) => {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-16 p-10 rounded-[3rem] bg-white/[0.02] border border-white/5 text-center shadow-inner">
             <span className="text-[11px] font-black text-white/20 uppercase tracking-[0.5em]">Institutional Micro-Loan Terminal</span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Underwriter Reasoning Section */}
