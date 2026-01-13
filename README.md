@@ -43,12 +43,15 @@ AI-powered loan underwriting application that analyzes financial documents and p
 
 3. Configure environment variables:
 
-   Create a `.env` file in the project root:
+   Copy the example environment file and add your API key:
 
-   ```env
-   OPENROUTER_API_KEY=your_openrouter_api_key_here
-   OPENROUTER_MODEL=google/gemini-2.5-flash
+   ```bash
+   cp .env.example .env
    ```
+
+   Then edit `.env` and replace `your_openrouter_api_key_here` with your actual OpenRouter API key from [openrouter.ai/keys](https://openrouter.ai/keys)
+
+   **⚠️ SECURITY WARNING**: Never commit the `.env` file to git. It contains your secret API key.
 
 4. Start the development server:
 

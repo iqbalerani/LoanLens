@@ -8,10 +8,6 @@ const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 // Validate API key on module load
 if (!OPENROUTER_API_KEY) {
   console.error("OPENROUTER_API_KEY is not defined. Please set it in your .env file.");
-} else {
-  // Debug: Show masked API key to verify it's loaded
-  const masked = OPENROUTER_API_KEY.substring(0, 10) + '...' + OPENROUTER_API_KEY.substring(OPENROUTER_API_KEY.length - 4);
-  console.log("OpenRouter API Key loaded:", masked, `(length: ${OPENROUTER_API_KEY.length})`);
 }
 
 // Helper function to call OpenRouter API
@@ -26,7 +22,6 @@ async function callOpenRouter(
   }
 
   console.log("Making OpenRouter API request with model:", model);
-  console.log("API Key present:", !!OPENROUTER_API_KEY, "Length:", OPENROUTER_API_KEY?.length);
   const requestBody: any = {
     model: model,
     messages: messages,
